@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Redirect http to https
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^home$ index.php [L]
+RewriteRule ^blog$ blog.php [L]
+RewriteRule ^event$ event.php [L]
+RewriteRule ^gallery$ gallery.php [L]
+RewriteRule ^achievement$ achievement.php [L]
+RewriteRule ^post/([a-zA-Z0-9-]+)/?$ detail-blog.php?slug=$1 [NC,L]
+RewriteRule ^events/([0-9]+)/?$ detail-event.php?id=$1 [NC,L]
